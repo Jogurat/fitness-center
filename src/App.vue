@@ -30,5 +30,6 @@ export default {
 
 :root {
   --main-bg-color: #343bd9;
+  --second-bg-color: #0c129c;
 }
 </style>

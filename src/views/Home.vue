@@ -70,7 +70,7 @@ export default {
 .img-container .main-img {
   /* width: 556px;
   height: 835px; */
-  width: 511.52;
+  width: 511.52px;
   height: 768.2px;
   z-index: 2;
 }

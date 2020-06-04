@@ -1,7 +1,14 @@
 <template>
   <div class="nav">
     <router-link class="nav-link" to="/">{{ link1[lang]}}</router-link>
-    <div class="dropdown nav-link">{{ link2[lang]}}</div>
+    <div class="dropdown-container">
+      <router-link class="nav-link" to="/">{{ link2[lang]}}</router-link>
+      <div class="dropdown-menu">
+        <router-link class="nav-link dropdown-item" to="/">{{ddLink1[lang]}}</router-link>
+        <router-link class="nav-link dropdown-item" to="/">{{ddLink2[lang]}}</router-link>
+        <router-link class="nav-link dropdown-item" to="/">{{ddLink3[lang]}}</router-link>
+      </div>
+    </div>
     <router-link class="nav-link" to="/">{{ link3[lang]}}</router-link>
     <router-link class="nav-link" to="/">{{ link4[lang]}}</router-link>
     <div class="lang-toggle-container">
@@ -55,6 +62,9 @@ export default {
       link2: { EN: "BOOK A SESSION", SR: "ZAKAZIVANJE" },
       link3: { EN: "MY PROFILE", SR: "MOJ NALOG" },
       link4: { EN: "ABOUT US", SR: "O NAMA" },
+      ddLink1: { EN: "WORKOUTS", SR: "TRENINZI" },
+      ddLink2: { EN: "NUTRICIONIST", SR: "NUTRICIONISTA" },
+      ddLink3: { EN: "MASSAGES", SR: "MASAŽE" },
       cx: 8
     };
   },
@@ -89,6 +99,7 @@ export default {
   width: 100vw;
   justify-content: flex-end;
   padding: 30px;
+  z-index: 3;
 }
 
 .nav-link {
@@ -150,5 +161,39 @@ export default {
   size: 30px;
   transition: 0.09s ease-in;
   cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  background-color: var(--second-bg-color);
+  border-radius: 4px;
+  box-shadow: 7px 10px 24px -9px rgba(255, 255, 255, 0.5);
+  /* border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black; */
+  z-index: 5;
+}
+
+.dropdown-item {
+  position: relative;
+  /* margin-top: 10px; */
+  padding: 10px;
+  z-index: 3;
+  /* text-align: center; */
+  /* margin-right: 0; */
+}
+
+.dropdown-item:first-of-type {
+  margin-top: 10px;
+}
+
+.dropdown-item:last-of-type {
+  margin-bottom: 10px;
+}
+
+.dropdown-container:hover .dropdown-menu {
+  display: flex;
 }
 </style>
