@@ -7,8 +7,9 @@
     <div class="text-fcentar">Fitness Center</div>
     <div class="text-adcopy">
       {{ adcopy[lang] }}
-      <div>
-        <button class="cta-btn">{{ ctaBtn[lang] }}</button>
+      <div class="test">
+        <!-- <button class="cta-btn">{{ ctaBtn[lang] }}</button> -->
+        <Button :text="ctaBtn[lang]" />
       </div>
     </div>
   </div>
@@ -16,10 +17,12 @@
 
 <script>
 // @ is an alias to /src
-
+import Button from "@/components/Button";
 export default {
   name: "Home",
-  components: {},
+  components: {
+    Button
+  },
   data() {
     return {
       adcopy: {
@@ -42,7 +45,7 @@ export default {
 .home {
   width: 100vw;
   height: 100vh;
-  background-color: #0c129c;
+  background-color: var(--main-bg-color);
   font-family: "Rubik", sans-serif;
 }
 
@@ -67,6 +70,7 @@ export default {
   font-size: 300px;
   letter-spacing: 0.06em;
   color: white;
+  /* font-family: "Ubuntu", sans-serif; */
 }
 
 .text-fcentar {
@@ -99,42 +103,5 @@ export default {
   color: white;
   width: 393px;
   height: 91px;
-}
-
-.cta-btn {
-  margin-top: 50px;
-  border: 2px solid white;
-  color: white;
-  background: none;
-  font-size: 27px;
-  padding: 15px;
-  cursor: pointer;
-  position: relative;
-  transition: 0.09s ease-in;
-  border-radius: 4px;
-  z-index: 2;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.cta-btn:hover {
-  color: #0c129c;
-}
-
-.cta-btn::before {
-  content: "";
-  position: absolute;
-  background: white;
-  color: #0c129c;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 100%;
-  z-index: -1;
-  transition: top 0.09s ease-in;
-}
-
-.cta-btn:hover::before {
-  top: 0;
 }
 </style>

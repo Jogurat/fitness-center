@@ -26,4 +26,9 @@ export default {
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
+:root {
+  --main-bg-color: #0c129c;
+}
 </style>
