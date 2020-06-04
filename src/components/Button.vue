@@ -36,6 +36,7 @@ export default {
   z-index: 2;
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-family: "Rubik", sans-serif;
 }
 
 .cta-btn:focus {
