@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="cta-btn">{{text}}</button>
+    <button :class="['cta-btn', filled ? 'filled' : '']">{{text}}</button>
   </div>
 </template>
 
@@ -11,7 +11,13 @@ export default {
       ctaBtn: ""
     };
   },
-  props: ["text"]
+  mounted() {
+    console.log(this.filled);
+  },
+  props: {
+    text: String,
+    filled: Boolean
+  }
 };
 </script>
 
@@ -32,6 +38,19 @@ export default {
   letter-spacing: 2px;
 }
 
+.cta-btn:focus {
+  outline: none;
+}
+
+.filled {
+  color: var(--main-bg-color);
+  background-color: white;
+}
+
+.cta-btn.filled:hover {
+  color: white;
+}
+
 .cta-btn:hover {
   color: var(--main-bg-color);
 }
@@ -47,6 +66,18 @@ export default {
   top: 100%;
   z-index: -1;
   transition: top 0.09s ease-in;
+}
+
+.cta-btn.filled::before {
+  background: var(--main-bg-color);
+  color: white;
+  bottom: 100%;
+  top: 0;
+  transition: bottom 0.09s ease-in;
+}
+
+.cta-btn.filled:hover::before {
+  bottom: 0%;
 }
 
 .cta-btn:hover::before {

@@ -1,15 +1,17 @@
 <template>
   <div class="home">
     <div class="img-container">
-      <img src="@/assets/cover-pic.png" alt />
+      <img class="main-img" src="@/assets/cover-pic.png" alt />
+      <img class="second-img" src="@/assets/pic2.png" alt />
     </div>
     <div class="text-play">PLAY</div>
     <div class="text-fcentar">Fitness Center</div>
     <div class="text-adcopy">
       {{ adcopy[lang] }}
-      <div class="test">
+      <div class="btn-container">
         <!-- <button class="cta-btn">{{ ctaBtn[lang] }}</button> -->
-        <Button :text="ctaBtn[lang]" />
+        <Button @click="test" class="main-btn" :text="secondaryBtn[lang]" />
+        <Button :text="primaryBtn[lang]" filled />
       </div>
     </div>
   </div>
@@ -29,8 +31,14 @@ export default {
         EN: "Find out why we are the best",
         SR: "Saznajte zasto smo najposecenija teretana na Banovom brdu i sire"
       },
-      ctaBtn: { EN: "Find out more", SR: "Saznaj vise" }
+      secondaryBtn: { EN: "Find out more", SR: "Saznaj vise" },
+      primaryBtn: { EN: "Book an apointment", SR: "Zakazi trening" }
     };
+  },
+  methods: {
+    test() {
+      console.log("hi");
+    }
   },
   props: ["lang"]
 };
@@ -41,6 +49,9 @@ export default {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  z-index: 2;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 .home {
   width: 100vw;
@@ -56,11 +67,19 @@ export default {
   height: 100vh;
 }
 
-.img-container img {
+.img-container .main-img {
   /* width: 556px;
   height: 835px; */
   width: 511.52;
   height: 768.2px;
+  z-index: 2;
+}
+
+.second-img {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 30%;
 }
 
 .text-play {
@@ -103,5 +122,15 @@ export default {
   color: white;
   width: 393px;
   height: 91px;
+}
+
+.btn-container {
+  display: flex;
+  width: 200%;
+  justify-content: flex-start;
+}
+
+.main-btn {
+  margin-right: 30px;
 }
 </style>
