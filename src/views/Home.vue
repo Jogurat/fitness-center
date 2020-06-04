@@ -14,6 +14,7 @@
         <Button :text="primaryBtn[lang]" filled />
       </div>
     </div>
+    <div class="white-box"></div>
   </div>
 </template>
 
@@ -75,6 +76,14 @@ export default {
   z-index: 2;
 }
 
+.main-img {
+  transition: transform 0.09s ease-in;
+}
+
+.main-img:hover {
+  transform: scale(1.1);
+}
+
 .second-img {
   position: absolute;
   z-index: 1;
@@ -132,5 +141,14 @@ export default {
 
 .main-btn {
   margin-right: 30px;
+}
+
+.white-box {
+  position: absolute;
+  height: 200px;
+  width: 600px;
+  background-color: var(--second-bg-color);
+  top: 60%;
+  z-index: 1;
 }
 </style>

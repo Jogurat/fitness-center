@@ -93,7 +93,7 @@ export default {
 .nav {
   position: absolute;
   display: flex;
-  background-color: #0c129c;
+  background-color: var(--main-bg-color);
   /* background-color: var(--main-bg-color); */
   height: 85px;
   width: 100vw;
@@ -137,8 +137,8 @@ export default {
   z-index: 1;
 }
 
-.dropdown {
-  cursor: pointer;
+.dropdown-container {
+  position: relative;
 }
 
 .lang-toggle-container {
@@ -165,6 +165,7 @@ export default {
 
 .dropdown-menu {
   display: none;
+  opacity: 0;
   position: absolute;
   flex-direction: column;
   background-color: var(--second-bg-color);
@@ -174,6 +175,9 @@ export default {
   border-right: 1px solid black;
   border-bottom: 1px solid black; */
   z-index: 5;
+  /* height: 20px; */
+  top: 25px;
+  transition: all 0.9s ease-in;
 }
 
 .dropdown-item {
@@ -195,5 +199,14 @@ export default {
 
 .dropdown-container:hover .dropdown-menu {
   display: flex;
+  opacity: 1;
+}
+
+.router-link-exact-active {
+  /* color: #ff2d82; */
+}
+
+.circle {
+  transition: all 0.09s ease-in;
 }
 </style>

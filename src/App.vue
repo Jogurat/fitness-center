@@ -29,7 +29,9 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 
 :root {
-  --main-bg-color: #343bd9;
-  --second-bg-color: #0c129c;
+  /* --main-bg-color: #343bd9; */
+  /* --second-bg-color: #0c129c; */
+  --main-bg-color: #21234b;
+  --second-bg-color: #10153b;
 }
 </style>
