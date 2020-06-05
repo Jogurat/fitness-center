@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button :class="['cta-btn', filled ? 'filled' : '']">{{text}}</button>
+    <button @click="handleClick" :class="['cta-btn', filled ? 'filled' : '']">{{text}}</button>
   </div>
 </template>
 
@@ -17,6 +17,11 @@ export default {
   props: {
     text: String,
     filled: Boolean
+  },
+  methods: {
+    handleClick() {
+      this.$emit("click");
+    }
   }
 };
 </script>

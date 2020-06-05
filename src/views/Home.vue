@@ -15,16 +15,21 @@
       </div>
     </div>
     <div class="white-box"></div>
+    <div class="secondary-content">
+      <WorkoutCard />
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Button from "@/components/Button";
+import WorkoutCard from "@/components/WorkoutCard";
 export default {
   name: "Home",
   components: {
-    Button
+    Button,
+    WorkoutCard
   },
   data() {
     return {
@@ -59,6 +64,7 @@ export default {
   height: 100vh;
   background-color: var(--main-bg-color);
   font-family: "Rubik", sans-serif;
+  /* overflow-x: hidden; */
 }
 
 .img-container {
@@ -66,6 +72,7 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  width: 100vw;
 }
 
 .img-container .main-img {
@@ -89,6 +96,7 @@ export default {
   z-index: 1;
   left: 50%;
   bottom: 30%;
+  /* overflow-x: hidden; */
 }
 
 .text-play {
@@ -150,5 +158,14 @@ export default {
   background-color: var(--second-bg-color);
   top: 60%;
   z-index: 1;
+}
+
+.secondary-content {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: var(--main-bg-color);
 }
 </style>

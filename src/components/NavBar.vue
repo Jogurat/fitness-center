@@ -100,6 +100,7 @@ export default {
   justify-content: flex-end;
   padding: 30px;
   z-index: 3;
+  /* top: 0; */
 }
 
 .nav-link {
