@@ -16,7 +16,12 @@
     </div>
     <div class="white-box"></div>
     <div class="secondary-content">
-      <WorkoutCard />
+      <h1>Our best</h1>
+      <div class="cards-container">
+        <WorkoutCard exerciseType="yoga" />
+        <WorkoutCard exerciseType="pilates" />
+        <WorkoutCard exerciseType="cardio" />
+      </div>
     </div>
   </div>
 </template>
@@ -165,7 +170,14 @@ export default {
   width: 100vw;
   margin: 0;
   display: flex;
+  /* flex-direction: ; */
   justify-content: center;
   background-color: var(--main-bg-color);
+}
+
+.cards-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }
 </style>
