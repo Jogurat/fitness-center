@@ -34,4 +34,8 @@ export default {
   --main-bg-color: #21234b;
   --second-bg-color: #10153b;
 }
+
+body {
+  font-family: "Rubik", sans-serif;
+}
 </style>

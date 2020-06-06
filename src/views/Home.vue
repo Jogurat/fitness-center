@@ -18,9 +18,9 @@
     <div class="secondary-content">
       <h1>Our best</h1>
       <div class="cards-container">
-        <WorkoutCard exerciseType="yoga" />
-        <WorkoutCard exerciseType="pilates" />
-        <WorkoutCard exerciseType="cardio" />
+        <WorkoutCard :workout="workouts[0]" :lang="lang" />
+        <WorkoutCard :workout="workouts[4]" :lang="lang" />
+        <WorkoutCard :workout="workouts[8]" :lang="lang" />
       </div>
     </div>
   </div>
@@ -30,6 +30,7 @@
 // @ is an alias to /src
 import Button from "@/components/Button";
 import WorkoutCard from "@/components/WorkoutCard";
+import workouts from "@/workouts.json";
 export default {
   name: "Home",
   components: {
@@ -43,13 +44,29 @@ export default {
         SR: "Saznajte zasto smo najposecenija teretana na Banovom brdu i sire"
       },
       secondaryBtn: { EN: "Find out more", SR: "Saznaj vise" },
-      primaryBtn: { EN: "Book an apointment", SR: "Zakazi trening" }
+      primaryBtn: { EN: "Book an apointment", SR: "Zakazi trening" },
+      workouts: [
+        {
+          id: 1,
+          category: "yoga",
+          title: "My Yoga",
+          appointments: [
+            { id: 1, text: "Info 1" },
+            { id: 2, text: "Info 2" },
+            { id: 3, text: "Info 3" }
+          ]
+        }
+      ]
     };
   },
   methods: {
     test() {
       console.log("hi");
     }
+  },
+  created() {
+    this.workouts = workouts;
+    console.log(this.workouts);
   },
   props: ["lang"]
 };

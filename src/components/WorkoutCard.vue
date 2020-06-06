@@ -4,12 +4,12 @@
       <img src="@/assets/yoga1.png" alt />
       <!-- <div class="img-bg" style="backgroundImage: `url(${require('@/assets/yoga1.png')})`"></div> -->
       <div class="img-filter">
-        <span class="exercise-type">{{ exerciseType }}</span>
+        <span class="exercise-type">{{ workout.category }}</span>
       </div>
     </div>
     <div class="card-basic-info">
       <!-- <button class="more-info-btn">Vise</button> -->
-      <span class="card-title">Title</span>
+      <span class="card-title">{{ workout.title[lang] }}</span>
 
       <div class="basic-info-container">
         <p>ASDff</p>
@@ -19,9 +19,10 @@
       <Button @click="handleClick" class="more-info-btn" text="Vise" filled></Button>
     </div>
     <div :class="['card-more-info', moreInfo ? 'show' : '']">
-      <p>Info 1</p>
+      <!-- <p>Info 1</p>
       <p>Info 2</p>
-      <p>Info 3</p>
+      <p>Info 3</p>-->
+      <p v-for="appointment in workout.appointments" :key="appointment.id">{{ appointment.date }}</p>
     </div>
   </div>
 </template>
@@ -37,7 +38,7 @@ export default {
   components: {
     Button
   },
-  props: ["exerciseType"],
+  props: ["workout", "lang"],
   methods: {
     handleClick() {
       console.log("Hi");
@@ -47,7 +48,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .card-container {
   display: flex;
   flex-direction: column;
@@ -55,7 +56,8 @@ export default {
   transition: transform 0.09s ease-in;
   cursor: pointer;
   align-items: center;
-  /* width: 400px; */
+  width: 415px;
+  height: 327px;
 }
 
 .card-container:hover {
@@ -84,7 +86,7 @@ export default {
   /* bottom: 0; */
   left: 7px;
   border-radius: 4px;
-  top: 23%;
+  top: 65%;
   /* border: 1px solid white; */
   transition: all 0.09s ease-in;
 }
@@ -159,9 +161,7 @@ export default {
   font-size: 20px;
   padding: 5px;
 }
-</style>
 
-<style>
 .more-info-btn .cta-btn {
   margin-top: 1px;
   width: 120px;
@@ -173,3 +173,4 @@ export default {
   justify-content: center;
 }
 </style>
+

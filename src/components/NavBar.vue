@@ -1,6 +1,6 @@
 <template>
   <div class="nav">
-    <router-link class="nav-link" to="/">{{ link1[lang]}}</router-link>
+    <router-link class="nav-link" to="/services">{{ link1[lang]}}</router-link>
     <div class="dropdown-container">
       <router-link class="nav-link" to="/">{{ link2[lang]}}</router-link>
       <div class="dropdown-menu">
