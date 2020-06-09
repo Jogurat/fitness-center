@@ -16,7 +16,7 @@
     </div>
     <div class="white-box"></div>
     <div class="secondary-content">
-      <h1>Our best</h1>
+      <!-- <h1>Our best</h1> -->
       <div class="cards-container">
         <WorkoutCard :workout="workouts[0]" :lang="lang" />
         <WorkoutCard :workout="workouts[4]" :lang="lang" />
@@ -87,6 +87,7 @@ export default {
   background-color: var(--main-bg-color);
   font-family: "Rubik", sans-serif;
   /* overflow-x: hidden; */
+  max-width: 100%;
 }
 
 .img-container {
@@ -95,6 +96,7 @@ export default {
   justify-content: center;
   height: 100vh;
   width: 100vw;
+  max-width: 100%;
 }
 
 .img-container .main-img {
@@ -190,10 +192,11 @@ export default {
   /* flex-direction: ; */
   justify-content: center;
   background-color: var(--main-bg-color);
+  max-width: 100%;
 }
 
 .cards-container {
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: space-evenly;
 }

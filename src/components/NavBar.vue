@@ -108,6 +108,7 @@ export default {
   padding: 30px;
   z-index: 3;
   /* top: 0; */
+  transition: background-color 0.09s ease-in;
 }
 
 .scrolled {
