@@ -4,9 +4,9 @@
       <img class="main-img" src="@/assets/cover-pic.png" alt />
       <img class="second-img" src="@/assets/pic2.png" alt />
     </div>
-    <div class="text-play">PLAY</div>
-    <div class="text-fcentar">Fitness Center</div>
-    <div class="text-adcopy">
+    <div class="text-play text">PLAY</div>
+    <div class="text-fcentar text">Fitness Center</div>
+    <div class="text-adcopy text">
       {{ adcopy[lang] }}
       <div class="btn-container">
         <!-- <button class="cta-btn">{{ ctaBtn[lang] }}</button> -->
@@ -21,6 +21,7 @@
         <WorkoutCard :workout="workouts[0]" :lang="lang" />
         <WorkoutCard :workout="workouts[4]" :lang="lang" />
         <WorkoutCard :workout="workouts[8]" :lang="lang" />
+        <WorkoutCard :workout="workouts[7]" :lang="lang" />
       </div>
     </div>
   </div>
@@ -199,5 +200,8 @@ export default {
   width: 100vw;
   display: flex;
   justify-content: space-evenly;
+}
+.text {
+  color: var(--main-text-color);
 }
 </style>

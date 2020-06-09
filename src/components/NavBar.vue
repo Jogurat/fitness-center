@@ -1,5 +1,6 @@
 <template>
   <div :class="['nav', scrollPosition > 50 ? 'scrolled' : '']">
+    <button @click="changeTheme">asd</button>
     <router-link class="nav-link" to="/services">{{ link1[lang]}}</router-link>
     <div class="dropdown-container">
       <router-link class="nav-link" to="/">{{ link2[lang]}}</router-link>
@@ -83,6 +84,19 @@ export default {
     },
     updateScroll() {
       this.scrollPosition = window.scrollY;
+    },
+    changeTheme() {
+      let bodyStyles = document.body.style;
+      if (bodyStyles.getPropertyValue("--main-bg-color") !== "#f5fafa") {
+        bodyStyles.setProperty("--main-bg-color", "#f5fafa");
+        bodyStyles.setProperty("--second-bg-color", "#acd1e9");
+        bodyStyles.setProperty("--main-text-color", "black");
+      } else {
+        bodyStyles.setProperty("--main-bg-color", "#21234b");
+        bodyStyles.setProperty("--second-bg-color", "#10153b");
+
+        bodyStyles.setProperty("--main-text-color", "white");
+      }
     }
   },
   mounted() {

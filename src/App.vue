@@ -33,9 +33,17 @@ export default {
   /* --second-bg-color: #0c129c; */
   --main-bg-color: #21234b;
   --second-bg-color: #10153b;
+  --main-text-color: white;
+  --main-light-bg-color: #f5fafa;
+  --second-light-bg-color: #acd1e9;
 }
 
 body {
   font-family: "Rubik", sans-serif;
+}
+
+.light-theme {
+  background-color: var(--main-light-bg-color);
+  color: var(--second-light-bg-color);
 }
 </style>

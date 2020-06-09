@@ -30,7 +30,7 @@ export default {
 .cta-btn {
   margin-top: 50px;
   border: 2px solid white;
-  color: white;
+  color: var(--main-text-color);
   background: none;
   font-size: 25px;
   padding: 15px;
