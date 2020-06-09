@@ -1,5 +1,5 @@
 <template>
-  <div class="nav">
+  <div :class="['nav', scrollPosition > 50 ? 'scrolled' : '']">
     <router-link class="nav-link" to="/services">{{ link1[lang]}}</router-link>
     <div class="dropdown-container">
       <router-link class="nav-link" to="/">{{ link2[lang]}}</router-link>
@@ -65,7 +65,8 @@ export default {
       ddLink1: { EN: "WORKOUTS", SR: "TRENINZI" },
       ddLink2: { EN: "NUTRICIONIST", SR: "NUTRICIONISTA" },
       ddLink3: { EN: "MASSAGES", SR: "MASAŽE" },
-      cx: 8
+      cx: 8,
+      scrollPosition: null
     };
   },
   methods: {
@@ -79,7 +80,13 @@ export default {
         this.cx = 8;
       }
       this.$emit("langChange", this.lang);
+    },
+    updateScroll() {
+      this.scrollPosition = window.scrollY;
     }
+  },
+  mounted() {
+    window.addEventListener("scroll", this.updateScroll);
   },
   computed: {
     isEnLang() {
@@ -91,7 +98,7 @@ export default {
 
 <style>
 .nav {
-  position: absolute;
+  position: fixed;
   display: flex;
   background-color: var(--main-bg-color);
   /* background-color: var(--main-bg-color); */
@@ -101,6 +108,10 @@ export default {
   padding: 30px;
   z-index: 3;
   /* top: 0; */
+}
+
+.scrolled {
+  background-color: var(--second-bg-color);
 }
 
 .nav-link {
