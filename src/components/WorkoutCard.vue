@@ -14,7 +14,7 @@
       <div class="basic-info-container">
         <p>{{ cardInfoDiffText[lang] }}: {{ workout.diff }}/5</p>
         <p>{{ cardInfoRatingText[lang] }}: {{ workout.rating }}/5</p>
-        <!-- <p>ASd</p> -->
+        <!-- <p>Duration: 1h45min</p> -->
       </div>
       <Button
         @click="handleClick"
