@@ -1,7 +1,7 @@
 <template>
   <div class="flex-container">
     <div class="filters-container">
-      <h1 class="filter-heading">Sort</h1>
+      <h1 class="filter-heading">{{ sortText[lang] }}</h1>
 
       <Button
         @click="handleSortDiff"
@@ -19,21 +19,23 @@
         :text="filterByName ? `${nameText[lang]} ⬇` : `${nameText[lang]} ⬆`"
       ></Button>
       <h1 class="filter-heading" id="filter-heading">{{ filtersText[lang] }}</h1>
-      <div class="input-container">
-        <input @change="handleChange" type="checkbox" name="exercise" id="cardio" checked />
-        <label for="cardio">Cardio</label>
-      </div>
-      <div class="input-container">
-        <input @change="handleChange" type="checkbox" name="exercise" id="yoga" checked />
-        <label for="yoga">Yoga</label>
-      </div>
-      <div class="input-container">
-        <input @change="handleChange" type="checkbox" name="exercise" id="pilates" checked />
-        <label for="pilates">Pilates</label>
-      </div>
-      <div class="input-container">
-        <input @change="handleChange" type="checkbox" name="exercise" id="core" checked />
-        <label for="core">Core</label>
+      <div class="checkbox-container">
+        <div class="input-container">
+          <input @change="handleChange" type="checkbox" name="exercise" id="cardio" checked />
+          <label for="cardio">Cardio</label>
+        </div>
+        <div class="input-container">
+          <input @change="handleChange" type="checkbox" name="exercise" id="yoga" checked />
+          <label for="yoga">Yoga</label>
+        </div>
+        <div class="input-container">
+          <input @change="handleChange" type="checkbox" name="exercise" id="pilates" checked />
+          <label for="pilates">Pilates</label>
+        </div>
+        <div class="input-container">
+          <input @change="handleChange" type="checkbox" name="exercise" id="core" checked />
+          <label for="core">Core</label>
+        </div>
       </div>
     </div>
     <div class="container">
@@ -66,7 +68,8 @@ export default {
       filterByRating: false,
       nameText: { EN: "Name", SR: "Ime" },
       diffText: { EN: "Difficulty", SR: "Težina" },
-      ratingText: { EN: "Rating", SR: "Ocena" }
+      ratingText: { EN: "Rating", SR: "Ocena" },
+      sortText: { EN: "Sort", SR: "Sortiraj" }
     };
   },
   components: {
@@ -154,7 +157,14 @@ export default {
 .input-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
+}
+
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
 }
 
 .filters-container {
@@ -187,7 +197,7 @@ export default {
 }
 
 .sort-btn .cta-btn {
-  margin-top: 10px;
+  margin-top: 20px;
   width: 190px;
   height: 40px;
   /* padding: 0; */
