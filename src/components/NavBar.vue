@@ -1,17 +1,32 @@
 <template>
   <div :class="['nav', scrollPosition > 50 ? 'scrolled' : '']">
     <button @click="changeTheme">asd</button>
-    <router-link class="nav-link" to="/services">{{ link1[lang]}}</router-link>
+    <!-- <button @click="savePdf">PDF</button> -->
+
+    <router-link class="nav-link" to="/">{{ linkHome[lang] }}</router-link>
+    <router-link class="nav-link" to="/services">{{ link1[lang] }}</router-link>
     <div class="dropdown-container">
-      <router-link class="nav-link" to="/">{{ link2[lang]}}</router-link>
+      <router-link class="nav-link" to="/">{{ link2[lang] }}</router-link>
       <div class="dropdown-menu">
-        <router-link class="nav-link dropdown-item" to="/">{{ddLink1[lang]}}</router-link>
-        <router-link class="nav-link dropdown-item" to="/">{{ddLink2[lang]}}</router-link>
-        <router-link class="nav-link dropdown-item" to="/">{{ddLink3[lang]}}</router-link>
+        <router-link class="nav-link dropdown-item" to="/">
+          {{
+          ddLink1[lang]
+          }}
+        </router-link>
+        <router-link class="nav-link dropdown-item" to="/">
+          {{
+          ddLink2[lang]
+          }}
+        </router-link>
+        <router-link class="nav-link dropdown-item" to="/">
+          {{
+          ddLink3[lang]
+          }}
+        </router-link>
       </div>
     </div>
-    <router-link class="nav-link" to="/">{{ link3[lang]}}</router-link>
-    <router-link class="nav-link" to="/">{{ link4[lang]}}</router-link>
+    <router-link class="nav-link" to="/">{{ link3[lang] }}</router-link>
+    <router-link class="nav-link" to="/about">{{ link4[lang] }}</router-link>
     <div class="lang-toggle-container">
       <div :class="['nav-link', isEnLang ? 'grayed-out' : '']">SR</div>
       <svg
@@ -55,10 +70,15 @@
 </template>
 
 <script>
+//Libs
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
+
 export default {
   data() {
     return {
       lang: "SR",
+      linkHome: { EN: "HOME", SR: "POČETNA" },
       link1: { EN: "SERVICES", SR: "USLUGE" },
       link2: { EN: "BOOK A SESSION", SR: "ZAKAZIVANJE" },
       link3: { EN: "MY PROFILE", SR: "MOJ NALOG" },
@@ -97,6 +117,15 @@ export default {
 
         bodyStyles.setProperty("--main-text-color", "white");
       }
+    },
+    savePdf() {
+      const filename = "PdfTest.pdf";
+
+      html2canvas(document.querySelector("body")).then(canvas => {
+        let pdf = new jsPDF("p", "mm", "a4");
+        pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, 211, 298);
+        pdf.save(filename);
+      });
     }
   },
   mounted() {
@@ -229,11 +258,11 @@ export default {
   opacity: 1;
 }
 
-.router-link-exact-active {
-  /* color: #ff2d82; */
-}
-
 .circle {
   transition: all 0.09s ease-in;
+}
+
+.router-link-exact-active {
+  font-weight: bold;
 }
 </style>

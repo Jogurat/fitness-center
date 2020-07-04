@@ -32,6 +32,7 @@
 import Button from "@/components/Button";
 import WorkoutCard from "@/components/WorkoutCard";
 import workouts from "@/workouts.json";
+
 export default {
   name: "Home",
   components: {
@@ -113,7 +114,7 @@ export default {
 }
 
 .main-img:hover {
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
 }
 
 .second-img {
@@ -198,8 +199,13 @@ export default {
 
 .cards-container {
   width: 100vw;
-  display: flex;
-  justify-content: space-evenly;
+  /* padding: 20px; */
+  /* display: flex;
+    justify-content: space-evenly; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  /* grid-gap: 10px; */
 }
 .text {
   color: var(--main-text-color);

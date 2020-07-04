@@ -1,7 +1,7 @@
 <template>
   <div class="card-container" id="card-container">
     <div class="card-img-container" id="card-img-container">
-      <img src="@/assets/yoga1.png" alt />
+      <img :src="require(`@/assets/${workout.category}${workout.id}.jpg`)" alt />
       <!-- <div class="img-bg" style="backgroundImage: `url(${require('@/assets/yoga1.png')})`"></div> -->
       <div class="img-filter">
         <span class="exercise-type">{{ workout.category }}</span>
@@ -12,11 +12,16 @@
       <span class="card-title">{{ workout.title[lang] }}</span>
 
       <div class="basic-info-container">
-        <p>ASDff</p>
-        <p>Adxzv</p>
-        <p>ASd</p>
+        <p>{{ cardInfoDiffText[lang] }}: {{ workout.diff }}/5</p>
+        <p>{{ cardInfoRatingText[lang] }}: {{ workout.rating }}/5</p>
+        <!-- <p>ASd</p> -->
       </div>
-      <Button @click="handleClick" class="more-info-btn" text="Vise" filled></Button>
+      <Button
+        @click="handleClick"
+        class="more-info-btn"
+        :text="lang === 'EN' ? 'More' : 'Više'"
+        filled
+      ></Button>
     </div>
     <div :class="['card-more-info', moreInfo ? 'show' : '']">
       <!-- <p>Info 1</p>
@@ -32,7 +37,9 @@ import Button from "./Button";
 export default {
   data() {
     return {
-      moreInfo: false
+      moreInfo: false,
+      cardInfoDiffText: { EN: "Difficulty", SR: "Težina" },
+      cardInfoRatingText: { EN: "Rating", SR: "Ocena" }
     };
   },
   components: {
@@ -61,15 +68,15 @@ export default {
 }
 
 .card-container:hover {
-  transform: scale(1.005);
+  transform: scale(1.01);
 }
 
 .card-container:hover > .card-img-container {
-  box-shadow: 10px 10px 16px -5px rgba(255, 255, 255, 0.3);
+  box-shadow: 10px 10px 16px -5px rgba(0, 0, 0, 0.5);
 }
 
 .card-container:hover > .card-basic-info {
-  box-shadow: 0px 6px 16px -5px rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 6px 16px -5px rgba(0, 0, 0, 0.5);
 }
 
 .card-basic-info {
@@ -104,7 +111,7 @@ export default {
 
 .basic-info-container p:nth-child(2) {
   border-left: 1px solid white;
-  border-right: 1px solid white;
+  /* border-right: 1px solid white; */
 }
 
 .card-img-container {
@@ -171,6 +178,16 @@ export default {
   align-items: center;
   display: flex;
   justify-content: center;
+}
+
+.card-img-container {
+  width: 415px;
+  height: 262px;
+}
+
+.card-img-container img {
+  width: 415px;
+  height: 262px;
 }
 </style>
 
