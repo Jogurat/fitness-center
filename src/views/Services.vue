@@ -18,6 +18,11 @@
         class="sort-btn"
         :text="filterByName ? `${nameText[lang]} ⬇` : `${nameText[lang]} ⬆`"
       ></Button>
+      <Button
+        @click="handleSortDur"
+        class="sort-btn"
+        :text="filterByDur ? `${durText[lang]} ⬇` : `${durText[lang]} ⬆`"
+      ></Button>
       <h1 class="filter-heading" id="filter-heading">{{ filtersText[lang] }}</h1>
       <div class="checkbox-container">
         <div class="input-container">
@@ -66,8 +71,10 @@ export default {
       filterByDiff: false,
       filterByName: false,
       filterByRating: false,
+      filterByDur: false,
       nameText: { EN: "Name", SR: "Ime" },
       diffText: { EN: "Difficulty", SR: "Težina" },
+      durText: { EN: "Duration", SR: "Trajanje" },
       ratingText: { EN: "Rating", SR: "Ocena" },
       sortText: { EN: "Sort", SR: "Sortiraj" }
     };
@@ -88,7 +95,7 @@ export default {
       return document.getElementById(el.category).checked;
     },
     handleSortDiff() {
-      console.log("hi from sort");
+      // console.log("hi from sort");
       this.filteredWorkouts.sort((a, b) => {
         if (this.filterByDiff) return a.diff - b.diff;
         else return b.diff - a.diff;
@@ -119,6 +126,13 @@ export default {
         }
       });
       this.filterByName = !this.filterByName;
+    },
+    handleSortDur() {
+      this.filteredWorkouts.sort((a, b) => {
+        if (this.filterByDur) return a.duration - b.duration;
+        else return b.duration - a.duration;
+      });
+      this.filterByDur = !this.filterByDur;
     }
   },
   props: ["lang"],
@@ -143,7 +157,7 @@ export default {
   justify-items: center;
   width: 100vw;
   min-height: 100vh;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-evenly;
   background-color: var(--main-bg-color);
 }

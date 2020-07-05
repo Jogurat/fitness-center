@@ -9,7 +9,8 @@
       { "id": 3, "date": "July 3, 2020 19:30:00" }
     ],
     "diff": 3,
-    "rating": 4.5
+    "rating": 4.5,
+    "duration": 130
   },
   {
     "id": 2,
@@ -21,7 +22,8 @@
       { "id": 3, "date": "July 3, 2020 19:30:00" }
     ],
     "diff": 2,
-    "rating": 3.7
+    "rating": 3.7,
+    "duration": 110
   },
   {
     "id": 3,
@@ -33,7 +35,8 @@
       { "id": 3, "date": "July 3, 2020 19:30:00" }
     ],
     "diff": 5,
-    "rating": 2.8
+    "rating": 2.8,
+    "duration": 145
   },
   {
     "id": 4,
@@ -45,7 +48,8 @@
       { "id": 3, "date": "July 3, 2020 19:30:00" }
     ],
     "diff": 3,
-    "rating": 4.5
+    "rating": 4.5,
+    "duration": 95
   },
   {
     "id": 5,
@@ -57,7 +61,8 @@
       { "id": 3, "date": "July 3, 2020 19:30:00" }
     ],
     "diff": 2,
-    "rating": 4.6
+    "rating": 4.6,
+    "duration": 80
   },
   {
     "id": 6,
@@ -69,7 +74,8 @@
       { "id": 3, "date": "July 3, 2020 19:30:00" }
     ],
     "diff": 4,
-    "rating": 3.3
+    "rating": 3.3,
+    "duration": 100
   },
   {
     "id": 7,
@@ -81,7 +87,8 @@
       { "id": 3, "date": "July 3, 2020 19:30:00" }
     ],
     "diff": 5,
-    "rating": 4.9
+    "rating": 4.9,
+    "duration": 60
   },
   {
     "id": 8,
@@ -93,7 +100,8 @@
       { "id": 3, "date": "July 3, 2020 19:30:00" }
     ],
     "diff": 3,
-    "rating": 4.1
+    "rating": 4.1,
+    "duration": 45
   },
   {
     "id": 9,
@@ -105,7 +113,8 @@
       { "id": 3, "date": "July 3, 2020 19:30:00" }
     ],
     "diff": 5,
-    "rating": 4.2
+    "rating": 4.2,
+    "duration": 90
   },
   {
     "id": 10,
@@ -117,7 +126,8 @@
       { "id": 3, "date": "July 3, 2020 19:30:00" }
     ],
     "diff": 3,
-    "rating": 4.0
+    "rating": 4.0,
+    "duration": 100
   },
   {
     "id": 11,
@@ -129,7 +139,8 @@
       { "id": 3, "date": "July 3, 2020 19:30:00" }
     ],
     "diff": 5,
-    "rating": 4.5
+    "rating": 4.5,
+    "duration": 85
   },
   {
     "id": 12,
@@ -141,6 +152,7 @@
       { "id": 3, "date": "July 3, 2020 19:30:00" }
     ],
     "diff": 3,
-    "rating": 4.8
+    "rating": 4.8,
+    "duration": 75
   }
 ]

@@ -27,6 +27,8 @@
       <!-- <p>Info 1</p>
       <p>Info 2</p>
       <p>Info 3</p>-->
+      <p>{{ durrText[lang] }}: {{workout.duration}}min</p>
+      <p>{{ appoText[lang] }}:</p>
       <p v-for="appointment in workout.appointments" :key="appointment.id">{{ appointment.date }}</p>
     </div>
   </div>
@@ -39,7 +41,9 @@ export default {
     return {
       moreInfo: false,
       cardInfoDiffText: { EN: "Difficulty", SR: "Težina" },
-      cardInfoRatingText: { EN: "Rating", SR: "Ocena" }
+      cardInfoRatingText: { EN: "Rating", SR: "Ocena" },
+      appoText: { EN: "Appointments", SR: "Termini" },
+      durrText: { EN: "Duration", SR: "Trajanje" }
     };
   },
   components: {
@@ -60,11 +64,11 @@ export default {
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: transform 0.09s ease-in;
+  transition: all 0.09s ease-in;
   cursor: pointer;
   align-items: center;
   width: 415px;
-  height: 327px;
+  /* max-height: 327px; */
 }
 
 .card-container:hover {
@@ -93,7 +97,8 @@ export default {
   /* bottom: 0; */
   left: 7px;
   border-radius: 4px;
-  top: 65%;
+  /* top: 65%; */
+  top: 210px;
   /* border: 1px solid white; */
   transition: all 0.09s ease-in;
 }
@@ -125,22 +130,30 @@ export default {
 
 .card-more-info {
   background-color: white;
-  /* position: absolute;
-  top: 32%; */
-  margin-top: 80px;
-  display: none;
+  position: relative;
+  /* top: 120%; */
+  margin-top: 60px;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  transition: all 1s ease-in;
+  transition: all 0.3s ease-in;
   /* z-index: 1; */
-  /* height: 0; */
+  max-height: 0;
   opacity: 0;
   width: 96%;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.card-more-info p {
+  padding: 3px;
 }
 
 .card-more-info.show {
-  display: flex;
+  /* display: flex; */
+  max-height: 100vh;
   opacity: 1;
+  z-index: 50;
 }
 .img-bg {
   /* background-image: url("/src/assets/yoga1.png"); */
