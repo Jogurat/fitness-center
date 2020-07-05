@@ -18,10 +18,11 @@
     <div class="secondary-content">
       <!-- <h1>Our best</h1> -->
       <div class="cards-container">
-        <WorkoutCard :workout="workouts[0]" :lang="lang" />
+        <!-- <WorkoutCard :workout="workouts[0]" :lang="lang" />
         <WorkoutCard :workout="workouts[4]" :lang="lang" />
         <WorkoutCard :workout="workouts[8]" :lang="lang" />
-        <WorkoutCard :workout="workouts[7]" :lang="lang" />
+        <WorkoutCard :workout="workouts[7]" :lang="lang" />-->
+        <WorkoutCard v-for="index in 3" :key="index" :workout="sortedWorkouts[index]" :lang="lang"></WorkoutCard>
       </div>
     </div>
   </div>
@@ -58,7 +59,8 @@ export default {
             { id: 3, text: "Info 3" }
           ]
         }
-      ]
+      ],
+      sortedWorkouts: []
     };
   },
   methods: {
@@ -69,6 +71,9 @@ export default {
   created() {
     this.workouts = workouts;
     console.log(this.workouts);
+    this.sortedWorkouts = workouts.sort((a, b) => {
+      return b.rating - a.rating;
+    });
   },
   props: ["lang"]
 };
