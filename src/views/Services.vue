@@ -76,7 +76,7 @@ export default {
       diffText: { EN: "Difficulty", SR: "Težina" },
       durText: { EN: "Duration", SR: "Trajanje" },
       ratingText: { EN: "Rating", SR: "Ocena" },
-      sortText: { EN: "Sort", SR: "Sortiraj" }
+      sortText: { EN: "Sort", SR: "Sortiranje" }
     };
   },
   components: {
@@ -153,10 +153,12 @@ export default {
   /* margin-top: 85px; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: repeat(3, 350px); */
   row-gap: 20px;
   justify-items: center;
   width: 100vw;
-  min-height: 100vh;
+  /* min-height: 200vh; */
+  height: 89%;
   /* align-items: center; */
   justify-content: space-evenly;
   background-color: var(--main-bg-color);
@@ -166,6 +168,7 @@ export default {
   background-color: var(--main-bg-color);
   display: flex;
   padding-top: 90px;
+  min-height: 180vh;
 }
 
 .input-container {
@@ -187,7 +190,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .filters-container input[type="checkbox"] {

@@ -68,7 +68,8 @@ export default {
   cursor: pointer;
   align-items: center;
   width: 415px;
-  /* max-height: 327px; */
+  /* max-height: 330px; */
+  max-height: 447px;
 }
 
 .card-container:hover {
