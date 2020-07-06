@@ -10,7 +10,13 @@
     ],
     "diff": 3,
     "rating": 4.5,
-    "duration": 130
+    "duration": 130,
+    "comments": [
+      { "id": 1, "user": "Pera", "body": "Super trening!" },
+      { "id": 2, "user": "Zika", "body": "Super trening od Zike!" },
+      { "id": 3, "user": "Laza", "body": "Super trening od Laze!" }
+    ],
+    "videoId": "icfwMWYDeac"
   },
   {
     "id": 2,
@@ -23,7 +29,13 @@
     ],
     "diff": 2,
     "rating": 3.7,
-    "duration": 110
+    "duration": 110,
+    "comments": [
+      { "id": 1, "user": "Pera", "body": "Super trening!" },
+      { "id": 2, "user": "Zika", "body": "Super trening od Zike!" },
+      { "id": 3, "user": "Laza", "body": "Super trening od Laze!" }
+    ],
+    "videoId": "sTANio_2E0Q"
   },
   {
     "id": 3,
@@ -36,7 +48,13 @@
     ],
     "diff": 5,
     "rating": 2.8,
-    "duration": 145
+    "duration": 145,
+    "comments": [
+      { "id": 1, "user": "Pera", "body": "Super trening!" },
+      { "id": 2, "user": "Zika", "body": "Super trening od Zike!" },
+      { "id": 3, "user": "Laza", "body": "Super trening od Laze!" }
+    ],
+    "videoId": "r7xsYgTeM2Q"
   },
   {
     "id": 4,
@@ -49,7 +67,13 @@
     ],
     "diff": 3,
     "rating": 4.5,
-    "duration": 95
+    "duration": 95,
+    "comments": [
+      { "id": 1, "user": "Pera", "body": "Super trening!" },
+      { "id": 2, "user": "Zika", "body": "Super trening od Zike!" },
+      { "id": 3, "user": "Laza", "body": "Super trening od Laze!" }
+    ],
+    "videoId": "RDQmnzuE2q4"
   },
   {
     "id": 5,
@@ -62,7 +86,13 @@
     ],
     "diff": 2,
     "rating": 4.6,
-    "duration": 80
+    "duration": 80,
+    "comments": [
+      { "id": 1, "user": "Pera", "body": "Super trening!" },
+      { "id": 2, "user": "Zika", "body": "Super trening od Zike!" },
+      { "id": 3, "user": "Laza", "body": "Super trening od Laze!" }
+    ],
+    "videoId": "Q3y4iGxPXSA"
   },
   {
     "id": 6,
@@ -75,7 +105,13 @@
     ],
     "diff": 4,
     "rating": 3.3,
-    "duration": 100
+    "duration": 100,
+    "comments": [
+      { "id": 1, "user": "Pera", "body": "Super trening!" },
+      { "id": 2, "user": "Zika", "body": "Super trening od Zike!" },
+      { "id": 3, "user": "Laza", "body": "Super trening od Laze!" }
+    ],
+    "videoId": "K56Z12XNQ5c"
   },
   {
     "id": 7,
@@ -88,7 +124,13 @@
     ],
     "diff": 5,
     "rating": 4.9,
-    "duration": 60
+    "duration": 60,
+    "comments": [
+      { "id": 1, "user": "Pera", "body": "Super trening!" },
+      { "id": 2, "user": "Zika", "body": "Super trening od Zike!" },
+      { "id": 3, "user": "Laza", "body": "Super trening od Laze!" }
+    ],
+    "videoId": "dJlFmxiL11s"
   },
   {
     "id": 8,
@@ -101,7 +143,13 @@
     ],
     "diff": 3,
     "rating": 4.1,
-    "duration": 45
+    "duration": 45,
+    "comments": [
+      { "id": 1, "user": "Pera", "body": "Super trening!" },
+      { "id": 2, "user": "Zika", "body": "Super trening od Zike!" },
+      { "id": 3, "user": "Laza", "body": "Super trening od Laze!" }
+    ],
+    "videoId": "-b2lNLq3EaA"
   },
   {
     "id": 9,
@@ -114,7 +162,13 @@
     ],
     "diff": 5,
     "rating": 4.2,
-    "duration": 90
+    "duration": 90,
+    "comments": [
+      { "id": 1, "user": "Pera", "body": "Super trening!" },
+      { "id": 2, "user": "Zika", "body": "Super trening od Zike!" },
+      { "id": 3, "user": "Laza", "body": "Super trening od Laze!" }
+    ],
+    "videoId": "N5ViYeGJOCA"
   },
   {
     "id": 10,
@@ -127,7 +181,13 @@
     ],
     "diff": 3,
     "rating": 4.0,
-    "duration": 100
+    "duration": 100,
+    "comments": [
+      { "id": 1, "user": "Pera", "body": "Super trening!" },
+      { "id": 2, "user": "Zika", "body": "Super trening od Zike!" },
+      { "id": 3, "user": "Laza", "body": "Super trening od Laze!" }
+    ],
+    "videoId": "2EriI_QCyGc"
   },
   {
     "id": 11,
@@ -140,7 +200,13 @@
     ],
     "diff": 5,
     "rating": 4.5,
-    "duration": 85
+    "duration": 85,
+    "comments": [
+      { "id": 1, "user": "Pera", "body": "Super trening!" },
+      { "id": 2, "user": "Zika", "body": "Super trening od Zike!" },
+      { "id": 3, "user": "Laza", "body": "Super trening od Laze!" }
+    ],
+    "videoId": "KxKJEIqS1HQ"
   },
   {
     "id": 12,
@@ -153,6 +219,12 @@
     ],
     "diff": 3,
     "rating": 4.8,
-    "duration": 75
+    "duration": 75,
+    "comments": [
+      { "id": 1, "user": "Pera", "body": "Super trening!" },
+      { "id": 2, "user": "Zika", "body": "Super trening od Zike!" },
+      { "id": 3, "user": "Laza", "body": "Super trening od Laze!" }
+    ],
+    "videoId": "oM4sHl1hTEE"
   }
 ]

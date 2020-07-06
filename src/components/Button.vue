@@ -12,7 +12,7 @@ export default {
     };
   },
   mounted() {
-    console.log(this.filled);
+    // console.log(this.filled);
   },
   props: {
     text: String,

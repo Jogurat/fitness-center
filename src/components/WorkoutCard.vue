@@ -41,6 +41,7 @@
             v-if="appointment.spotsLeft > 0"
             @click="reserveAppo(appointment.id)"
           >{{ reserveText[lang] }}</span>
+          <span v-if="checkReserved(appointment.id)">Otkazi</span>
         </p>
       </div>
       <!-- <p>{{ appointment.date }}</p> -->
@@ -96,8 +97,21 @@ export default {
       // console.log(alreadyReserved);
       if (!alreadyReserved) reservedAppos.push(reservation);
       localStorage.setItem("reservedAppos", JSON.stringify(reservedAppos));
+    },
+    checkReserved(appoId) {
+      let reservedAppos = JSON.parse(localStorage.getItem("reservedAppos"));
+      let alreadyReserved = false;
+      reservedAppos.forEach(appo => {
+        // console.log(this.workout.id);
+        // console.log("heya from foreach");
+        if (appo.workoutId === this.workout.id && appo.appoId === appoId) {
+          alreadyReserved = true;
+        }
+      });
+      return !alreadyReserved;
     }
-  }
+  },
+  computed: {}
 };
 </script>
 

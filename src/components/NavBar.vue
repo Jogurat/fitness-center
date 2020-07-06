@@ -8,17 +8,17 @@
     <div class="dropdown-container">
       <router-link class="nav-link" to="/">{{ link2[lang] }}</router-link>
       <div class="dropdown-menu">
-        <router-link class="nav-link dropdown-item" to="/">
+        <router-link class="nav-link dropdown-item" to="/services">
           {{
           ddLink1[lang]
           }}
         </router-link>
-        <router-link class="nav-link dropdown-item" to="/">
+        <router-link class="nav-link dropdown-item" to="/appointments/nutricionist">
           {{
           ddLink2[lang]
           }}
         </router-link>
-        <router-link class="nav-link dropdown-item" to="/">
+        <router-link class="nav-link dropdown-item" to="/appointments/massage">
           {{
           ddLink3[lang]
           }}

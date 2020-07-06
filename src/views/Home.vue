@@ -60,7 +60,8 @@ export default {
           ]
         }
       ],
-      sortedWorkouts: []
+      sortedWorkouts: [],
+      title: { EN: "Home", SR: "Početna" }
     };
   },
   methods: {
@@ -74,6 +75,7 @@ export default {
     this.sortedWorkouts = workouts.sort((a, b) => {
       return b.rating - a.rating;
     });
+    document.title = `Play Fitness - ${this.title[this.lang]}`;
   },
   props: ["lang"]
 };

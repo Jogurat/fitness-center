@@ -49,7 +49,7 @@
         :key="workout.id"
         :workout="workout"
         :lang="lang"
-        @onClick="handleClick"
+        @onClick="handleClick(workout)"
       />
       <!-- <button @click="handleClick">hello</button> -->
     </div>
@@ -143,8 +143,8 @@ export default {
   props: ["lang"],
   created() {
     // console.log("created services");
-    this.workouts = workouts;
-    this.filteredWorkouts = workouts;
+    this.workouts = [...workouts];
+    this.filteredWorkouts = [...workouts];
     this.workout = workouts[0];
     document.title = `Play Fitness - ${this.title[this.lang]}`;
   }
