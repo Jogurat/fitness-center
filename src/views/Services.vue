@@ -49,6 +49,7 @@
         :key="workout.id"
         :workout="workout"
         :lang="lang"
+        @onClick="handleClick"
       />
       <!-- <button @click="handleClick">hello</button> -->
     </div>
@@ -133,6 +134,10 @@ export default {
         else return b.duration - a.duration;
       });
       this.filterByDur = !this.filterByDur;
+    },
+    handleClick(workout) {
+      console.log(workout.id);
+      this.$router.push(`plan/${workout.id}`);
     }
   },
   props: ["lang"],

@@ -4,9 +4,9 @@
     "category": "yoga",
     "title": { "EN": "Hatha Yoga", "SR": "Hatha Yoga" },
     "appointments": [
-      { "id": 1, "date": "July 3, 2020 17:30:00" },
-      { "id": 2, "date": "July 3, 2020 18:30:00" },
-      { "id": 3, "date": "July 3, 2020 19:30:00" }
+      { "id": 1, "date": "July 3, 2020 17:30:00", "spotsLeft": 0 },
+      { "id": 2, "date": "July 3, 2020 18:30:00", "spotsLeft": 5 },
+      { "id": 3, "date": "July 3, 2020 19:30:00", "spotsLeft": 10 }
     ],
     "diff": 3,
     "rating": 4.5,
@@ -17,9 +17,9 @@
     "category": "yoga",
     "title": { "EN": "Vinyasa Yoga", "SR": "Vinyasa Yoga" },
     "appointments": [
-      { "id": 1, "date": "July 3, 2020 17:30:00" },
-      { "id": 2, "date": "July 3, 2020 18:30:00" },
-      { "id": 3, "date": "July 3, 2020 19:30:00" }
+      { "id": 1, "date": "July 3, 2020 17:30:00", "spotsLeft": 10 },
+      { "id": 2, "date": "July 3, 2020 18:30:00", "spotsLeft": 10 },
+      { "id": 3, "date": "July 3, 2020 19:30:00", "spotsLeft": 10 }
     ],
     "diff": 2,
     "rating": 3.7,
@@ -30,9 +30,9 @@
     "category": "yoga",
     "title": { "EN": "Yin Yoga", "SR": "Yin Yoga" },
     "appointments": [
-      { "id": 1, "date": "July 3, 2020 17:30:00" },
-      { "id": 2, "date": "July 3, 2020 18:30:00" },
-      { "id": 3, "date": "July 3, 2020 19:30:00" }
+      { "id": 1, "date": "July 3, 2020 17:30:00", "spotsLeft": 10 },
+      { "id": 2, "date": "July 3, 2020 18:30:00", "spotsLeft": 10 },
+      { "id": 3, "date": "July 3, 2020 19:30:00", "spotsLeft": 10 }
     ],
     "diff": 5,
     "rating": 2.8,
@@ -43,9 +43,9 @@
     "category": "pilates",
     "title": { "EN": "Reformer Pilates", "SR": "Reformer Pilates" },
     "appointments": [
-      { "id": 1, "date": "July 3, 2020 17:30:00" },
-      { "id": 2, "date": "July 3, 2020 18:30:00" },
-      { "id": 3, "date": "July 3, 2020 19:30:00" }
+      { "id": 1, "date": "July 3, 2020 17:30:00", "spotsLeft": 10 },
+      { "id": 2, "date": "July 3, 2020 18:30:00", "spotsLeft": 10 },
+      { "id": 3, "date": "July 3, 2020 19:30:00", "spotsLeft": 10 }
     ],
     "diff": 3,
     "rating": 4.5,
@@ -56,9 +56,9 @@
     "category": "pilates",
     "title": { "EN": "Group Pilates", "SR": "Groupni Pilates" },
     "appointments": [
-      { "id": 1, "date": "July 3, 2020 17:30:00" },
-      { "id": 2, "date": "July 3, 2020 18:30:00" },
-      { "id": 3, "date": "July 3, 2020 19:30:00" }
+      { "id": 1, "date": "July 3, 2020 17:30:00", "spotsLeft": 10 },
+      { "id": 2, "date": "July 3, 2020 18:30:00", "spotsLeft": 10 },
+      { "id": 3, "date": "July 3, 2020 19:30:00", "spotsLeft": 10 }
     ],
     "diff": 2,
     "rating": 4.6,
@@ -69,9 +69,9 @@
     "category": "pilates",
     "title": { "EN": "Classical Pilates", "SR": "Klasični Pilates" },
     "appointments": [
-      { "id": 1, "date": "July 3, 2020 17:30:00" },
-      { "id": 2, "date": "July 3, 2020 18:30:00" },
-      { "id": 3, "date": "July 3, 2020 19:30:00" }
+      { "id": 1, "date": "July 3, 2020 17:30:00", "spotsLeft": 10 },
+      { "id": 2, "date": "July 3, 2020 18:30:00", "spotsLeft": 10 },
+      { "id": 3, "date": "July 3, 2020 19:30:00", "spotsLeft": 10 }
     ],
     "diff": 4,
     "rating": 3.3,
@@ -82,9 +82,9 @@
     "category": "core",
     "title": { "EN": "Core Burner", "SR": "Core Burner" },
     "appointments": [
-      { "id": 1, "date": "July 3, 2020 17:30:00" },
-      { "id": 2, "date": "July 3, 2020 18:30:00" },
-      { "id": 3, "date": "July 3, 2020 19:30:00" }
+      { "id": 1, "date": "July 3, 2020 17:30:00", "spotsLeft": 10 },
+      { "id": 2, "date": "July 3, 2020 18:30:00", "spotsLeft": 10 },
+      { "id": 3, "date": "July 3, 2020 19:30:00", "spotsLeft": 10 }
     ],
     "diff": 5,
     "rating": 4.9,
@@ -95,9 +95,9 @@
     "category": "core",
     "title": { "EN": "Day 1 Planker", "SR": "Dan 1. Planker" },
     "appointments": [
-      { "id": 1, "date": "July 3, 2020 17:30:00" },
-      { "id": 2, "date": "July 3, 2020 18:30:00" },
-      { "id": 3, "date": "July 3, 2020 19:30:00" }
+      { "id": 1, "date": "July 3, 2020 17:30:00", "spotsLeft": 10 },
+      { "id": 2, "date": "July 3, 2020 18:30:00", "spotsLeft": 10 },
+      { "id": 3, "date": "July 3, 2020 19:30:00", "spotsLeft": 10 }
     ],
     "diff": 3,
     "rating": 4.1,
@@ -108,9 +108,9 @@
     "category": "core",
     "title": { "EN": "Total Abs", "SR": "Total Abs" },
     "appointments": [
-      { "id": 1, "date": "July 3, 2020 17:30:00" },
-      { "id": 2, "date": "July 3, 2020 18:30:00" },
-      { "id": 3, "date": "July 3, 2020 19:30:00" }
+      { "id": 1, "date": "July 3, 2020 17:30:00", "spotsLeft": 10 },
+      { "id": 2, "date": "July 3, 2020 18:30:00", "spotsLeft": 10 },
+      { "id": 3, "date": "July 3, 2020 19:30:00", "spotsLeft": 10 }
     ],
     "diff": 5,
     "rating": 4.2,
@@ -121,9 +121,9 @@
     "category": "cardio",
     "title": { "EN": "Row-Oh", "SR": "Veslanje" },
     "appointments": [
-      { "id": 1, "date": "July 3, 2020 17:30:00" },
-      { "id": 2, "date": "July 3, 2020 18:30:00" },
-      { "id": 3, "date": "July 3, 2020 19:30:00" }
+      { "id": 1, "date": "July 3, 2020 17:30:00", "spotsLeft": 10 },
+      { "id": 2, "date": "July 3, 2020 18:30:00", "spotsLeft": 10 },
+      { "id": 3, "date": "July 3, 2020 19:30:00", "spotsLeft": 10 }
     ],
     "diff": 3,
     "rating": 4.0,
@@ -134,9 +134,9 @@
     "category": "cardio",
     "title": { "EN": "CouchTo2K", "SR": "Trčanje" },
     "appointments": [
-      { "id": 1, "date": "July 3, 2020 17:30:00" },
-      { "id": 2, "date": "July 3, 2020 18:30:00" },
-      { "id": 3, "date": "July 3, 2020 19:30:00" }
+      { "id": 1, "date": "July 3, 2020 17:30:00", "spotsLeft": 10 },
+      { "id": 2, "date": "July 3, 2020 18:30:00", "spotsLeft": 10 },
+      { "id": 3, "date": "July 3, 2020 19:30:00", "spotsLeft": 10 }
     ],
     "diff": 5,
     "rating": 4.5,
@@ -147,9 +147,9 @@
     "category": "cardio",
     "title": { "EN": "Swim2Win", "SR": "Plivanje" },
     "appointments": [
-      { "id": 1, "date": "July 3, 2020 17:30:00" },
-      { "id": 2, "date": "July 3, 2020 18:30:00" },
-      { "id": 3, "date": "July 3, 2020 19:30:00" }
+      { "id": 1, "date": "July 3, 2020 17:30:00", "spotsLeft": 10 },
+      { "id": 2, "date": "July 3, 2020 18:30:00", "spotsLeft": 10 },
+      { "id": 3, "date": "July 3, 2020 19:30:00", "spotsLeft": 10 }
     ],
     "diff": 3,
     "rating": 4.8,

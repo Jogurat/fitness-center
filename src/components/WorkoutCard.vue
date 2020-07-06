@@ -1,6 +1,6 @@
 <template>
   <div class="card-container" id="card-container">
-    <div class="card-img-container" id="card-img-container">
+    <div @click="handleDivClick" class="card-img-container" id="card-img-container">
       <img :src="require(`@/assets/${workout.category}${workout.id}.jpg`)" alt />
       <!-- <div class="img-bg" style="backgroundImage: `url(${require('@/assets/yoga1.png')})`"></div> -->
       <div class="img-filter">
@@ -29,7 +29,21 @@
       <p>Info 3</p>-->
       <p>{{ durrText[lang] }}: {{workout.duration}}min</p>
       <p>{{ appoText[lang] }}:</p>
-      <p v-for="appointment in workout.appointments" :key="appointment.id">{{ appointment.date }}</p>
+      <div
+        v-for="appointment in workout.appointments"
+        :key="appointment.id"
+        class="appointment-container"
+      >
+        <p>
+          {{ appointment.date }} - {{ spotsText[lang] }}: {{ appointment.spotsLeft }}
+          <span
+            class="reserve-span"
+            v-if="appointment.spotsLeft > 0"
+            @click="reserveAppo(appointment.id)"
+          >{{ reserveText[lang] }}</span>
+        </p>
+      </div>
+      <!-- <p>{{ appointment.date }}</p> -->
     </div>
   </div>
 </template>
@@ -43,7 +57,9 @@ export default {
       cardInfoDiffText: { EN: "Difficulty", SR: "Težina" },
       cardInfoRatingText: { EN: "Rating", SR: "Ocena" },
       appoText: { EN: "Appointments", SR: "Termini" },
-      durrText: { EN: "Duration", SR: "Trajanje" }
+      durrText: { EN: "Duration", SR: "Trajanje" },
+      reserveText: { EN: "Reserve", SR: "Rezerviši" },
+      spotsText: { EN: "Spots", SR: "Mesta" }
     };
   },
   components: {
@@ -54,6 +70,32 @@ export default {
     handleClick() {
       console.log("Hi");
       this.moreInfo = !this.moreInfo;
+    },
+    handleDivClick() {
+      this.$emit("onClick", this.workout);
+    },
+    reserveAppo(appoId) {
+      let emptyArr = [];
+      if (localStorage.getItem("reservedAppos") == null) {
+        localStorage.setItem("reservedAppos", JSON.stringify(emptyArr));
+      }
+      let alreadyReserved = false;
+      let reservedAppos = JSON.parse(localStorage.getItem("reservedAppos"));
+      let reservation = {
+        workoutId: this.workout.id,
+        appoId
+      };
+      // this.workout.appointments[appoId]--;
+      reservedAppos.forEach(appo => {
+        // console.log(this.workout.id);
+        // console.log("heya from foreach");
+        if (appo.workoutId === this.workout.id && appo.appoId === appoId) {
+          alreadyReserved = true;
+        }
+      });
+      // console.log(alreadyReserved);
+      if (!alreadyReserved) reservedAppos.push(reservation);
+      localStorage.setItem("reservedAppos", JSON.stringify(reservedAppos));
     }
   }
 };
@@ -65,7 +107,6 @@ export default {
   flex-direction: column;
   position: relative;
   transition: all 0.09s ease-in;
-  cursor: pointer;
   align-items: center;
   width: 415px;
   /* max-height: 330px; */
@@ -124,6 +165,7 @@ export default {
   /* border: 1px solid white; */
   transition: all 0.09s ease-in;
   position: relative;
+  cursor: pointer;
 }
 
 .img-filter {
@@ -202,6 +244,13 @@ export default {
 .card-img-container img {
   width: 415px;
   height: 262px;
+}
+
+.reserve-span {
+  cursor: pointer;
+  margin-left: 10px;
+  color: blue;
+  text-decoration: underline;
 }
 </style>
 
