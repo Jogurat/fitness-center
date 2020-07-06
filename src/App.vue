@@ -2,14 +2,17 @@
   <div id="app">
     <NavBar @langChange="handleLangChange" />
     <router-view :lang="lang" />
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 export default {
   components: {
-    NavBar
+    NavBar,
+    Footer
   },
   data() {
     return {

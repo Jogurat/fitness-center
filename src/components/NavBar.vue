@@ -1,12 +1,12 @@
 <template>
   <div :class="['nav', scrollPosition > 50 ? 'scrolled' : '']">
-    <button @click="changeTheme">asd</button>
+    <!-- <button @click="changeTheme">asd</button> -->
     <!-- <button @click="savePdf">PDF</button> -->
 
     <router-link class="nav-link" to="/">{{ linkHome[lang] }}</router-link>
     <router-link class="nav-link" to="/services">{{ link1[lang] }}</router-link>
     <div class="dropdown-container">
-      <router-link class="nav-link" to="/">{{ link2[lang] }}</router-link>
+      <router-link class="nav-link" to="/appointments/nutricionist">{{ link2[lang] }}</router-link>
       <div class="dropdown-menu">
         <router-link class="nav-link dropdown-item" to="/services">
           {{
@@ -25,7 +25,7 @@
         </router-link>
       </div>
     </div>
-    <router-link class="nav-link" to="/">{{ link3[lang] }}</router-link>
+    <router-link class="nav-link" to="/profile">{{ link3[lang] }}</router-link>
     <router-link class="nav-link" to="/about">{{ link4[lang] }}</router-link>
     <div class="lang-toggle-container">
       <div :class="['nav-link', isEnLang ? 'grayed-out' : '']">SR</div>
@@ -265,5 +265,15 @@ export default {
 .router-link-exact-active {
   font-weight: bold;
   color: #7672b3;
+}
+
+@media (max-width: 1040px) {
+  .nav {
+    position: relative;
+    flex-direction: column;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+  }
 }
 </style>

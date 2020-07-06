@@ -15,9 +15,11 @@
 
     <div class="comments-container">
       <div class="new-comment-container">
+        <label for="rating">{{ ratingText[lang] }}</label>
+        <input type="number" name id="rating" min="1" max="5" placeholder="5" />
         <textarea name id="new-comment" cols="100" rows="3" v-model="newComment"></textarea>
         <!-- <button @click="postComment">Postavi</button> -->
-        <Button @click="postComment" text="Postavi komentar" class="comment-btn" filled></Button>
+        <Button @click="postComment" :text="btnText[lang]" class="comment-btn" filled></Button>
         <p class="alert">Morate da prisustvjuejtet</p>
       </div>
 
@@ -40,7 +42,9 @@ export default {
       commentsText: { EN: "Comments", SR: "Komentari" },
       durText: { EN: "Duration", SR: "Trajanje" },
       diffText: { EN: "Difficulty", SR: "Težina" },
-      title: { EN: "Plans", SR: "Treninzi" }
+      title: { EN: "Plans", SR: "Treninzi" },
+      btnText: { EN: "Post comment", SR: "Postavi komentar" },
+      ratingText: { EN: "Your rating", SR: "Vaša ocena" }
     };
   },
   props: ["lang"],
@@ -121,5 +125,10 @@ export default {
 
 .alert {
   align-self: center;
+}
+
+#rating {
+  width: 6%;
+  font-size: 20px;
 }
 </style>

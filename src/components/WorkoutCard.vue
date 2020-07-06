@@ -41,7 +41,7 @@
             v-if="appointment.spotsLeft > 0"
             @click="reserveAppo(appointment.id)"
           >{{ reserveText[lang] }}</span>
-          <span v-if="checkReserved(appointment.id)">Otkazi</span>
+          <!-- <span v-if="checkReserved(appointment.id)">Otkazi</span> -->
         </p>
       </div>
       <!-- <p>{{ appointment.date }}</p> -->

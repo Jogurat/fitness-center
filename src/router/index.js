@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Services from "../views/Services.vue";
 import Plan from "../views/Plan.vue";
 import Appointments from "../views/Appointments.vue";
+import Profile from "../views/Profile.vue";
 
 Vue.use(VueRouter);
 
@@ -37,11 +38,19 @@ const routes = [
     name: "Appointments",
     component: Appointments,
   },
+  {
+    path: "/profile",
+    name: "Profile",
+    component: Profile,
+  },
 ];
 
 const router = new VueRouter({
   routes,
   mode: "history",
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  },
 });
 
 export default router;

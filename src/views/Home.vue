@@ -10,8 +10,8 @@
       {{ adcopy[lang] }}
       <div class="btn-container">
         <!-- <button class="cta-btn">{{ ctaBtn[lang] }}</button> -->
-        <Button @click="test" class="main-btn" :text="secondaryBtn[lang]" />
-        <Button :text="primaryBtn[lang]" filled />
+        <Button @click="handleSecondaryClick" class="main-btn" :text="secondaryBtn[lang]" />
+        <Button @click="handlePrimaryClick" :text="primaryBtn[lang]" filled />
       </div>
     </div>
     <div class="white-box"></div>
@@ -22,7 +22,13 @@
         <WorkoutCard :workout="workouts[4]" :lang="lang" />
         <WorkoutCard :workout="workouts[8]" :lang="lang" />
         <WorkoutCard :workout="workouts[7]" :lang="lang" />-->
-        <WorkoutCard v-for="index in 3" :key="index" :workout="sortedWorkouts[index]" :lang="lang"></WorkoutCard>
+        <WorkoutCard
+          @onClick="handleClick(sortedWorkouts[index])"
+          v-for="index in 3"
+          :key="index"
+          :workout="sortedWorkouts[index]"
+          :lang="lang"
+        ></WorkoutCard>
       </div>
     </div>
   </div>
@@ -67,12 +73,22 @@ export default {
   methods: {
     test() {
       console.log("hi");
+    },
+    handlePrimaryClick() {
+      this.$router.push("/services");
+    },
+    handleSecondaryClick() {
+      this.$router.push("/about");
+    },
+    handleClick(workout) {
+      console.log(workout.id);
+      this.$router.push(`plan/${workout.id}`);
     }
   },
   created() {
-    this.workouts = workouts;
+    this.workouts = [...workouts];
     console.log(this.workouts);
-    this.sortedWorkouts = workouts.sort((a, b) => {
+    this.sortedWorkouts = this.workouts.sort((a, b) => {
       return b.rating - a.rating;
     });
     document.title = `Play Fitness - ${this.title[this.lang]}`;
@@ -92,7 +108,7 @@ export default {
 }
 .home {
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   background-color: var(--main-bg-color);
   font-family: "Rubik", sans-serif;
   /* overflow-x: hidden; */
