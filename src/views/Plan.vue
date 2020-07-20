@@ -14,13 +14,13 @@
     ></iframe>
 
     <div class="comments-container">
-      <div class="new-comment-container">
+      <div class="new-comment-container" v-if="canPost">
         <label for="rating">{{ ratingText[lang] }}</label>
         <input type="number" name id="rating" min="1" max="5" placeholder="5" />
         <textarea name id="new-comment" cols="100" rows="3" v-model="newComment"></textarea>
         <!-- <button @click="postComment">Postavi</button> -->
         <Button @click="postComment" :text="btnText[lang]" class="comment-btn" filled></Button>
-        <p class="alert">Morate da prisustvjuejtet</p>
+        <!-- <p class="alert">Morate da prisustvjuejtet</p> -->
       </div>
 
       <h3 class="comments-heading">{{ commentsText[lang] }}</h3>
@@ -38,6 +38,7 @@ export default {
     return {
       workout: null,
       comments: [],
+      canPost: false,
       newComment: "",
       commentsText: { EN: "Comments", SR: "Komentari" },
       durText: { EN: "Duration", SR: "Trajanje" },
@@ -54,15 +55,30 @@ export default {
   },
   methods: {
     postComment() {
-      this.comments.push({ user: "New USer", body: this.newComment });
-      this.newComment = "";
+      if (this.canPost) {
+        this.comments.push({ user: "New USer", body: this.newComment });
+        this.newComment = "";
+      }
     }
   },
-  created() {
-    console.log(workouts);
+  mounted() {
+    // console.log(workouts);
+
     this.workout = workouts[this.$route.params.id - 1];
     this.comments = this.workout.comments;
     document.title = `Play Fitness - ${this.title[this.lang]}`;
+    const workoutss = JSON.parse(localStorage.getItem("reservedAppos"));
+    for (let wo of workoutss) {
+      // console.log(wo);
+      // console.log(this.workout);
+      if (
+        wo.workoutId === this.workout.id &&
+        wo.appoId === this.workout.appoId
+      ) {
+        this.canPost = true;
+        break;
+      }
+    }
   }
 };
 </script>

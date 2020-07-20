@@ -3,7 +3,7 @@
     <h1>{{ profileText[lang] }}</h1>
     <div class="workouts-woo" v-if="myWorkouts.length > 0">
       <div v-for="(workout, index) in myWorkouts" :key="index" class="remove-workout-container">
-        <WorkoutCard :workout="workout" :lang="lang"></WorkoutCard>
+        <WorkoutCard :workout="workout" :lang="lang" @onClick="handleClick(workout)"></WorkoutCard>
         <Button @click="removeWorkout(workout)" :text="btnText[lang]" class="remove-btn"></Button>
       </div>
     </div>
@@ -40,18 +40,30 @@ export default {
       let storedWorkouts = JSON.parse(localStorage.getItem("reservedAppos"));
       storedWorkouts = storedWorkouts.filter(workout => {
         return (
-          workout.workoutId !== workoutToRemove.id &&
+          workout.workoutId !== workoutToRemove.id ||
           workout.appoId !== workoutToRemove.appoId
         );
       });
       localStorage.setItem("reservedAppos", JSON.stringify(storedWorkouts));
       this.myWorkouts = this.myWorkouts.filter(workout => {
-        console.log(workout);
+        console.log(workoutToRemove);
         return (
-          workout.id !== workoutToRemove.id &&
+          workout.id !== workoutToRemove.id ||
           workout.appoId !== workoutToRemove.appoId
         );
       });
+      // this.myWorkouts = this.myWorkouts.filter(workout => {
+      //   if (workout.id === workoutToRemove.id) {
+      //     if (workout.appoId === workoutToRemove.appoId) {
+      //       return false;
+      //     } else {
+      //       return true;
+      //     }
+      //   }
+      // });
+    },
+    handleClick(workout) {
+      this.$router.push(`plan/${workout.id}`);
     }
   },
   created() {

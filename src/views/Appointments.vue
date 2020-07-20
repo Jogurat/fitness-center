@@ -44,7 +44,7 @@ export default {
       html2canvas(document.querySelector(".appo-form"), { scale: 2 }).then(
         canvas => {
           let pdf = new jsPDF("p", "mm", "a4");
-          pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0); //, 0, 0, 211, 298
+          pdf.addImage(canvas.toDataURL("image/png"), "PNG", 50, 20); //, 0, 0, 211, 298
           pdf.save(filename);
         }
       );

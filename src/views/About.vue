@@ -4,7 +4,9 @@
     <h1>{{ teamText[lang] }}</h1>
     <p>Pero Mikić</p>
     <p>Slavoljub Petrović</p>
-
+    <h1>{{ awardsText[lang] }}</h1>
+    <p>Banovo brdo #1</p>
+    <p>Beograd fitness asocijacija 2019</p>
     <h1>{{ phoneText[lang] }}</h1>
     <p>123456</p>
     <h1>{{mapText[lang]}}</h1>
@@ -29,7 +31,8 @@ export default {
     return {
       teamText: { EN: "Our team", SR: "Naš tim" },
       mapText: { EN: "Where are we?", SR: "Kako do nas?" },
-      phoneText: { EN: "Our phone", SR: "Kontakt telefon" }
+      phoneText: { EN: "Our phone", SR: "Kontakt telefon" },
+      awardsText: { EN: "Awards", SR: "Nagrade" }
     };
   },
   props: ["lang"]
